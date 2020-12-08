@@ -1,22 +1,26 @@
 ---
-title: Hello World
+title: 博客成功切换至 github pages
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+经过两天研究，自己的博客成功切换到 github 上了。目前博客的主程序用了比较流行的 hexo 工具进行搭建，之前没有怎么详细研究过，今天就简单说说步骤和遇到的坑吧。 
 
-## Quick Start
+## 基本要求
 
-### Create a new post
+### 安装 npm
+
+去官网下，可以使用二进制包，方便快捷。这里就不多说了。地址可以[点击这里](https://nodejs.org/en/download/current/)，根据自己当前系统的版本选择就可以了。
+
+我这里介绍一下 linux 环境下的安装
 
 ``` bash
 $ hexo new "My New Post"
 ```
 
-More info: [Writing](https://hexo.io/docs/writing.html)
+安装好后，就可以跟着教程进行 hexo 的安装了。官网打开比较卡，[点击这里](https://hexo.bootcss.com/)可以看国内的版本。
 
-### Run server
+### 安装 hexo
 
 ``` bash
-$ hexo server
+$ npm install hexo-cli
 ```
 
 More info: [Server](https://hexo.io/docs/server.html)
