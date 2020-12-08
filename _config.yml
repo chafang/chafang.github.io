@@ -13,7 +13,7 @@ timezone: 'Asia/Shanghai'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: # https://chafang.github.io/chafang
+url: https://chafang.github.io
 root: /
 permalink: :hash/ #:year/:month/:day/:title/
 permalink_defaults:
@@ -105,5 +105,5 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:chafang/chafang.git
+  repo: git@github.com:chafang/chafang.github.io.git
   branch: master
