@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar.jpg">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="github支持githubPage静态界面来搭建我们的个人博客，自己配置。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS 8 初始化设置">
+<meta property="og:url" content="http://example.com/7e7c2cb00ef2/index.html">
+<meta property="og:site_name" content="山猫的博客">
+<meta property="og:description" content="github支持githubPage静态界面来搭建我们的个人博客，自己配置。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-12-07T11:52:09.000Z">
+<meta property="article:modified_time" content="2020-12-08T01:36:54.416Z">
+<meta property="article:author" content="山猫">
+<meta property="article:tag" content="山猫的博客">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/7e7c2cb00ef2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>CentOS 8 初始化设置 | 山猫的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">山猫的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-主页">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/7e7c2cb00ef2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="山猫">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="山猫的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CentOS 8 初始化设置
+        </h1>
+
+        <div class="post-meta">
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>github支持githubPage静态界面来搭建我们的个人博客，自己配置。</p>
+<a id="more"></a>
+
+<h2 id="更新系统"><a href="#更新系统" class="headerlink" title="更新系统"></a>更新系统</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">yum -y update</span><br><span class="line"></span><br><span class="line"># 安装开发工具，可运行 yum grouplist 查看</span><br><span class="line">yum -y groupinstall &quot;Development Tools&quot;</span><br><span class="line"></span><br><span class="line"># 若报 “No packages in any requested group available to install or update”，尝试运行以下进行安装</span><br><span class="line">yum -y group install &quot;Development tools&quot; --setopt&#x3D;group_package_types&#x3D;mandatory,default,optional</span><br><span class="line"></span><br><span class="line"># 安装其他的源和包</span><br><span class="line">yum -y install epel-release</span><br><span class="line">yum -y install psmisc git net-snmp httpd-tools curl-devel openssl openssl-devel libxml2 libxml2-devel pcre pcre-devel libffi-devel ncurses-devel htop net-tools vim openssh-server openssh-clients net-tools</span><br><span class="line"></span><br><span class="line"># 安装 PHP 可能用到的包</span><br><span class="line">yum -y install bzip2 bzip2-devel libzip libzip-devel libcurl libcurl-devel libjpeg libjpeg-devel libpng libpng-devel freetype freetype-devel gmp gmp-devel libmcrypt libmcrypt-devel readline readline-devel libxslt libxslt-devel libicu libicu-devel sqlite sqlite-devel oniguruma oniguruma-devel libevent libevent-devel libpng-devel libwebp-devel libjpeg-devel icu libicu-devel libxslt-devel</span><br></pre></td></tr></table></figure>
+
+<p>以上可直接使用 shell 脚本直接运行，需注意的是最好更换国内镜像源。</p>
+<h2 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h2><p>新增用户</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adduser [username]</span><br><span class="line">passwd [username]</span><br></pre></td></tr></table></figure>
+
+<p>设置普通用户运行 sudo 跳过密码，重新登录 shell 生效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">visudo</span><br><span class="line"></span><br><span class="line"># 找到相关行，添加以下代码</span><br><span class="line">[username] ALL&#x3D;(ALL) NOPASSWD: ALL</span><br><span class="line"></span><br><span class="line"># 保存</span><br></pre></td></tr></table></figure>
+
+<p>修改 sshd 配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br><span class="line"></span><br><span class="line"># 更改配置</span><br><span class="line">PPermitRootLogin no # 是否运行 root 登陆</span><br><span class="line">TCPKeepAlive yes # 是否运行长链接</span><br><span class="line">ClientAliveInterval 60 # 客户端心跳时间</span><br><span class="line">ClientAliveCountMax 10 # 心跳最大次数</span><br><span class="line"></span><br><span class="line"># 保存</span><br><span class="line"></span><br><span class="line"># 重新加载配置</span><br><span class="line">service sshd reload</span><br></pre></td></tr></table></figure>
+
+<p>修改主机名称（可选），重启生效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hostnamectl set-hostname [hostname]</span><br><span class="line">vim &#x2F;etc&#x2F;profile</span><br></pre></td></tr></table></figure>
+
+<p>修改 shell 提示符样式（可选）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;profile</span><br><span class="line"></span><br><span class="line"># 新增一行</span><br><span class="line">export PS1&#x3D;&#39;\u@\h:\w \$ &#39;</span><br><span class="line"></span><br><span class="line"># 保存</span><br><span class="line"></span><br><span class="line">source &#x2F;etc&#x2F;profile</span><br></pre></td></tr></table></figure>
+
+<p>关闭防火墙</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl disable firewalld</span><br></pre></td></tr></table></figure>
+
+<p>配置 IpTables</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 接收所有转发至本机的数据包</span><br><span class="line">iptables -P INPUT ACCEPT</span><br><span class="line"></span><br><span class="line"># 清空所有 rule 规则</span><br><span class="line">iptables -F</span><br></pre></td></tr></table></figure>
+
+<p>配置 git</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;name&quot;</span><br><span class="line">git config --global user.email &quot;email&quot;</span><br><span class="line"></span><br><span class="line">git config --global alias.st status</span><br><span class="line">git config --global alias.co checkout</span><br><span class="line">git config --global alias.ci commit</span><br><span class="line">git config --global alias.br branch</span><br><span class="line"></span><br><span class="line"># 设置 ssh-key</span><br><span class="line">ssh-keygen -t rsa -C &quot;email&quot;</span><br><span class="line"></span><br><span class="line"># 设置 push 方式</span><br><span class="line">git config --global push.default simple</span><br></pre></td></tr></table></figure>
+
+<h2 id="免密码登录-SSH"><a href="#免密码登录-SSH" class="headerlink" title="免密码登录 SSH"></a>免密码登录 SSH</h2><p>以下代码需在本地计算机运行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id username@ip</span><br><span class="line"></span><br><span class="line"># 没有则新建文件</span><br><span class="line">vim ~&#x2F;.ssh&#x2F;config</span><br><span class="line"></span><br><span class="line"># 设置名称</span><br><span class="line">Host alias-name</span><br><span class="line">HostName ip</span><br><span class="line">User username</span><br><span class="line">IdentitiesOnly yes</span><br><span class="line"></span><br><span class="line"># 保存，多个 ssh 用空行隔开</span><br></pre></td></tr></table></figure>
+
+<p>以上配置完成</p>
+<h2 id="安装-Nginx-服务"><a href="#安装-Nginx-服务" class="headerlink" title="安装 Nginx 服务"></a>安装 Nginx 服务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 准备用户和组</span><br><span class="line">groupadd nginx</span><br><span class="line"></span><br><span class="line"># 禁止用户登录</span><br><span class="line">useradd nginx -g nginx -s &#x2F;sbin&#x2F;nologin -M</span><br></pre></td></tr></table></figure>
+
+<p>官网下载 <a target="_blank" rel="noopener" href="http://nginx.org/en/download.html" title="nginx">Download</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">tar -zxf nginx-latest.tar.gz</span><br><span class="line">cd nginx-latest</span><br><span class="line"></span><br><span class="line"># 可使用 .&#x2F;configure --help 查看帮助和相关插件</span><br><span class="line">.&#x2F;configure --user&#x3D;nginx --group&#x3D;nginx --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;share&#x2F;nginx --with-http_ssl_module --with-http_v2_module --with-http_realip_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_auth_request_module --with-http_secure_link_module --with-http_stub_status_module</span><br><span class="line"></span><br><span class="line">make &amp;&amp; make install</span><br><span class="line"></span><br><span class="line"># nginx 可使用 ln 做软连接至 &#x2F;usr&#x2F;local&#x2F;sbin 中</span><br><span class="line">ln -s &#x2F;usr&#x2F;local&#x2F;share&#x2F;nginx&#x2F;sbin&#x2F;nginx &#x2F;usr&#x2F;local&#x2F;sbin&#x2F;nginx</span><br><span class="line"></span><br><span class="line"># 检查 nginx 配置</span><br><span class="line">nginx -t</span><br><span class="line"></span><br><span class="line"># 启动 nginx 服务</span><br><span class="line">nginx</span><br><span class="line"></span><br><span class="line"># 关闭或重载 nginx 服务</span><br><span class="line">nginx -s stop</span><br><span class="line">nginx -s reload</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>配置 nginx 验证功能（可选）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">htpasswd -c &#x2F;usr&#x2F;local&#x2F;share&#x2F;nginx&#x2F;conf&#x2F;ptList [username]</span><br><span class="line"></span><br><span class="line"># 在 server 或 location 配置中添加，htpasswd 只支持目录认证</span><br><span class="line">auth_basic &quot;Please input password&quot;;</span><br><span class="line">auth_basic_user_file &#x2F;usr&#x2F;local&#x2F;share&#x2F;nginx&#x2F;conf&#x2F;ptList;</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装-php-fpm-服务"><a href="#安装-php-fpm-服务" class="headerlink" title="安装 php-fpm 服务"></a>安装 php-fpm 服务</h2><p>官网下载 <a target="_blank" rel="noopener" href="https://www.php.net/downloads" title="php">Download</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">tar -zxf php-latest.tar.gz</span><br><span class="line">cd php-latest</span><br><span class="line"></span><br><span class="line"># 可使用 .&#x2F;configure --help 查看帮助和相关插件</span><br><span class="line">.&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;share&#x2F;php --with-fpm-user&#x3D;nginx --with-fpm-group&#x3D;nginx --enable-fpm --disable-fileinfo --with-curl --with-gettext --with-iconv-dir --enable-intl --with-mysqli --with-openssl --with-pdo-mysql --with-pdo-sqlite --with-pear --with-xmlrpc --with-xsl --with-zlib --with-bz2 --with-mhash --enable-bcmath --enable-inline-optimization --enable-mbregex --enable-mbstring --enable-opcache --enable-pcntl --enable-shmop --enable-soap --enable-sockets --enable-sysvsem --enable-sysvshm --enable-xml --enable-gd --with-webp --with-jpeg</span><br><span class="line"></span><br><span class="line"># 以上配置安装时可能会报各种包版本问题或找不到，可搜索相关报错信息进行修复，部分常见错误可见附加列表。</span><br><span class="line"></span><br><span class="line">make &amp;&amp; make test &amp;&amp; make install</span><br><span class="line"></span><br><span class="line"># 设置软链接</span><br><span class="line">ln -s &#x2F;usr&#x2F;local&#x2F;share&#x2F;php&#x2F;sbin&#x2F;php-fpm &#x2F;usr&#x2F;local&#x2F;sbin&#x2F;php-fpm</span><br><span class="line">ln -s &#x2F;usr&#x2F;local&#x2F;share&#x2F;php&#x2F;bin&#x2F;php &#x2F;usr&#x2F;local&#x2F;sbin&#x2F;php</span><br><span class="line">ln -s &#x2F;usr&#x2F;local&#x2F;share&#x2F;php&#x2F;bin&#x2F;pecl &#x2F;usr&#x2F;local&#x2F;sbin&#x2F;pecl</span><br><span class="line">ln -s &#x2F;usr&#x2F;local&#x2F;share&#x2F;php&#x2F;bin&#x2F;php-config &#x2F;usr&#x2F;local&#x2F;sbin&#x2F;php-config</span><br><span class="line">ln -s &#x2F;usr&#x2F;local&#x2F;share&#x2F;php&#x2F;bin&#x2F;phpize &#x2F;usr&#x2F;local&#x2F;sbin&#x2F;phpize</span><br><span class="line">ln -s &#x2F;usr&#x2F;local&#x2F;share&#x2F;php&#x2F;bin&#x2F;php-cgi &#x2F;usr&#x2F;local&#x2F;sbin&#x2F;php-cgi</span><br><span class="line"></span><br><span class="line"># 复制配置文件</span><br><span class="line">cp php.ini-* &#x2F;usr&#x2F;local&#x2F;share&#x2F;php&#x2F;lib&#x2F;</span><br><span class="line">cp &#x2F;usr&#x2F;local&#x2F;share&#x2F;php&#x2F;lib&#x2F;php.ini-production &#x2F;usr&#x2F;local&#x2F;share&#x2F;php&#x2F;lib&#x2F;php.ini</span><br><span class="line">cp &#x2F;usr&#x2F;local&#x2F;share&#x2F;php&#x2F;etc&#x2F;php-fpm.conf.default &#x2F;usr&#x2F;local&#x2F;share&#x2F;php&#x2F;etc&#x2F;php-fpm.conf</span><br><span class="line">cp &#x2F;usr&#x2F;local&#x2F;share&#x2F;php&#x2F;etc&#x2F;php-fpm.d&#x2F;www.conf.default &#x2F;usr&#x2F;local&#x2F;share&#x2F;php&#x2F;etc&#x2F;php-fpm.d&#x2F;www.conf</span><br><span class="line"></span><br><span class="line"># 验证配置</span><br><span class="line">php-fpm -t</span><br><span class="line"></span><br><span class="line"># 启动服务</span><br><span class="line">php-fpm -D</span><br><span class="line"></span><br><span class="line"># 平滑退出</span><br><span class="line">ps aux|grep -E &quot;php-fpm:\ master\ process&quot;|awk &#39;&#123;print $2&#125;&#39;|xargs kill -QUIT</span><br><span class="line"></span><br><span class="line"># 平滑重启</span><br><span class="line">ps aux|grep -E &quot;php-fpm:\ master\ process&quot;|awk &#39;&#123;print $2&#125;&#39;|xargs kill -USR2</span><br></pre></td></tr></table></figure>
+
+<h4 id="安装-PHP-时常见错误列表"><a href="#安装-PHP-时常见错误列表" class="headerlink" title="安装 PHP 时常见错误列表"></a>安装 PHP 时常见错误列表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"># 常见的报错可参考以下进行修复</span><br><span class="line"></span><br><span class="line"># 解决 error: the HTTP XSLT module requires the libxml2&#x2F;libxslt 错误</span><br><span class="line">yum -y install libxml2 libxml2-dev libxslt-devel</span><br><span class="line"></span><br><span class="line"># 解决 error: the HTTP image filter module requires the GD library. 错误</span><br><span class="line">yum -y install gd-devel</span><br><span class="line"></span><br><span class="line"># 解决 error: the GeoIP module requires the GeoIP library. 错误</span><br><span class="line">yum -y install GeoIP GeoIP-devel GeoIP-data</span><br><span class="line"></span><br><span class="line"># 解决 error: the Google perftools module requires the Google perftools 错误</span><br><span class="line">yum -y install gperftools</span><br><span class="line"></span><br><span class="line"># 解决 error: libatomic_ops library was not found. 错误</span><br><span class="line">yum -y install libuuid-devel libblkid-devel libudev-devel fuse-devel libedit-devel libatomic_ops-devel</span><br><span class="line"></span><br><span class="line"># 解决 error trying to exec &#39;cc1plus&#39;: execvp: No such file or directory 错误</span><br><span class="line">yum -y install gcc-c++</span><br><span class="line"></span><br><span class="line"># 解决configure: error: mbed TLS libraries not found. 错误。需要安装mbedtls，教程：https:&#x2F;&#x2F;www.24kplus.com&#x2F;linux&#x2F;281.html</span><br><span class="line"></span><br><span class="line"># 解决 error: Cannot find OpenSSL&#39;s &lt;evp.h&gt; 错误</span><br><span class="line">yum -y install openssl openssl-devel</span><br><span class="line">ln -s &#x2F;usr&#x2F;lib64&#x2F;libssl.so &#x2F;usr&#x2F;lib&#x2F;</span><br><span class="line"></span><br><span class="line"># 解决 error: Libtool library used but &#39;LIBTOOL&#39; is undefined 错误</span><br><span class="line">yum -y install libtool</span><br><span class="line"></span><br><span class="line"># 解决 exec: g++: not found 错误</span><br><span class="line">yum -y update gcc</span><br><span class="line">yum -y install gcc+ gcc-c++</span><br><span class="line"></span><br><span class="line"># 解决 configure: error: tss lib not found: libtspi.so 错误</span><br><span class="line">yum -y install trousers-devel</span><br><span class="line"></span><br><span class="line"># 解决 Can&#39;t exec &quot;autopoint&quot;: No such file or directory 错误</span><br><span class="line">yum -y install gettext gettext-devel gettext-common-devel</span><br><span class="line"></span><br><span class="line"># 解决 configure: error: libcrypto not found. 错误</span><br><span class="line">yum -y remove openssl-devel</span><br><span class="line">yum -y install openssl-devel</span><br><span class="line"></span><br><span class="line"># 解决 configure: error: Package requirements (libffi &gt;&#x3D; 3.0.0) were not met: No package &#39;libffi&#39; found 错误</span><br><span class="line">yum -y install libffi-devel</span><br><span class="line"></span><br><span class="line"># 解决 fatal error: uuid.h: No such file or directory 错误</span><br><span class="line">yum -y install e2fsprogs-devel uuid-devel libuuid-devel</span><br><span class="line"></span><br><span class="line"># 解决 configure: error: openssl lib not found: libcrypto.so 错误</span><br><span class="line">yum -y install openssl-devel</span><br><span class="line"></span><br><span class="line"># 解决 tar (child): lbzip2: Cannot exec: No such file or directory 错误</span><br><span class="line">yum -y install bzip2</span><br><span class="line"></span><br><span class="line"># 解决 configure: error: C++ preprocessor &quot;&#x2F;lib&#x2F;cpp&quot; fails sanity check 错误</span><br><span class="line">yum -y install gcc-c++</span><br><span class="line"></span><br><span class="line"># 解决 configure: error: Please reinstall the BZip2 distribution 错误</span><br><span class="line">yum -y install bzip2 bzip2-devel</span><br><span class="line"></span><br><span class="line"># 解决 configure: error: cURL version 7.15.5 or later is required to compile php with cURL support 错误</span><br><span class="line">yum -y install curl-devel</span><br><span class="line"></span><br><span class="line"># 解决 configure: error: not found. Please provide a path to MagickWand-config or Wand-config program 错误</span><br><span class="line">yum -y install ImageMagick-devel</span><br><span class="line"></span><br><span class="line"># 解决 configure: error: no acceptable C compiler found in $PATH 错误</span><br><span class="line">yum -y install gcc</span><br><span class="line"></span><br><span class="line"># 解决 configure: error: Package requirements (icu-uc &gt;&#x3D; 50.1 icu-io icu-i18n) were not met: 错误</span><br><span class="line">yum -y install libicu-devel</span><br><span class="line"></span><br><span class="line"># 解决 configure: error: Package requirements (sqlite3 &gt; 3.7.4) were not met: No package &#39;sqlite3&#39; found 错误</span><br><span class="line">yum -y install sqlite-devel</span><br><span class="line"></span><br><span class="line"># 解决 configure: error: Package requirements (oniguruma) were not met: No package &#39;oniguruma&#39; found 错误</span><br><span class="line">yum -y install oniguruma oniguruma-devel</span><br><span class="line"></span><br><span class="line"># 以上常见错误解决，其他未列出的需自己尝试处理，无非就是一些包的安装</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="安装-Composer-工具"><a href="#安装-Composer-工具" class="headerlink" title="安装 Composer 工具"></a>安装 Composer 工具</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir &#x2F;usr&#x2F;local&#x2F;share&#x2F;composer</span><br><span class="line">php -r &quot;copy(&#39;https:&#x2F;&#x2F;getcomposer.org&#x2F;installer&#39;, &#39;composer-setup.php&#39;);&quot;</span><br><span class="line">php composer-setup.php --install-dir&#x3D;&#x2F;usr&#x2F;local&#x2F;share&#x2F;composer --filename&#x3D;composer</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装-Mariadb-服务"><a href="#安装-Mariadb-服务" class="headerlink" title="安装 Mariadb 服务"></a>安装 Mariadb 服务</h2><p>打开官网资源 <a target="_blank" rel="noopener" href="https://downloads.mariadb.org/mariadb/repositories/" title="mariadb">Repo</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"># 选择对应的系统，将生成的数据保存至 &#x2F;etc&#x2F;yum.repos.d&#x2F;MariaDB.repo</span><br><span class="line"></span><br><span class="line"># MariaDB 10.3 CentOS repository list - created 2019-03-26 08:55 UTC</span><br><span class="line"># http:&#x2F;&#x2F;downloads.mariadb.org&#x2F;mariadb&#x2F;repositories&#x2F;</span><br><span class="line">[mariadb]</span><br><span class="line">name &#x3D; MariaDB</span><br><span class="line">baseurl &#x3D; http:&#x2F;&#x2F;yum.mariadb.org&#x2F;10.3&#x2F;centos7-amd64</span><br><span class="line">gpgkey&#x3D;https:&#x2F;&#x2F;yum.mariadb.org&#x2F;RPM-GPG-KEY-MariaDB</span><br><span class="line">gpgcheck&#x3D;1</span><br><span class="line"></span><br><span class="line"># 安装 MariaDB</span><br><span class="line">yum -y install MariaDB-server MariaDB-client</span><br><span class="line"></span><br><span class="line"># 自启动并运行 SQL 服务</span><br><span class="line">systemctl enable mariadb</span><br><span class="line">systemctl start mariadb</span><br><span class="line"></span><br><span class="line"># 找到 mariaDB 配置文件中的 [mysqld] 部分，添加一行</span><br><span class="line"># 通常在 &#x2F;etc&#x2F;my.cnf.d&#x2F;server.cnf 中</span><br><span class="line">[mysqld]</span><br><span class="line">skip-grant-tables</span><br><span class="line"></span><br><span class="line"># 进行 sql 初始化设置</span><br><span class="line">mysql_secure_installation</span><br><span class="line"></span><br><span class="line"># 重启 SQL 服务</span><br><span class="line">systemctl restart mariadb</span><br></pre></td></tr></table></figure>
+
+<p>以下是常见 MySQL 命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># 创建数据库</span><br><span class="line">CREATE DATABASE database_name;</span><br><span class="line"></span><br><span class="line"># 创建新用户:</span><br><span class="line">CREATE USER &#39;username&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;password&#39;;</span><br><span class="line"></span><br><span class="line"># 赋予操作权限:</span><br><span class="line">GRANT ALL PRIVILEGES ON database_name.table_name TO &#39;username&#39;@&#39;localhost&#39;;</span><br><span class="line">GRANT ALL PRIVILEGES ON database_name.* TO &#39;username&#39;@&#39;localhost&#39;;</span><br><span class="line"></span><br><span class="line"># 删除用户:</span><br><span class="line">DROP USER &#39;username&#39;@&#39;localhost&#39;;</span><br><span class="line"></span><br><span class="line"># 显示某个用户权限:</span><br><span class="line">SHOW GRANTS FOR &#39;root&#39;@&#39;localhost&#39;;</span><br><span class="line"></span><br><span class="line"># 刷新权限:</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装-Vsftpd"><a href="#安装-Vsftpd" class="headerlink" title="安装 Vsftpd"></a>安装 Vsftpd</h2><p>vsftpd 是 <em>very secure FTP daemon</em> 的缩写</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 安装 ftp 服务</span><br><span class="line">yum -y install vsftpd</span><br><span class="line"></span><br><span class="line"># 编辑配置文件</span><br><span class="line">vim &#x2F;etc&#x2F;vsftpd&#x2F;vsftpd.conf</span><br></pre></td></tr></table></figure>
+
+<p>匿名用户访问</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">anonymous_enable&#x3D;YES</span><br><span class="line">no_anon_password&#x3D;YES</span><br><span class="line">write_enable&#x3D;YES</span><br><span class="line">anon_root&#x3D;&#x2F;var&#x2F;ftp # 配置匿名用户根目录，可选</span><br><span class="line">anon_upload_enable&#x3D;YES # 允许匿名用户上传文件</span><br><span class="line">anon_mkdir_write_enable&#x3D;YES # 匿名用户可以建目录</span><br><span class="line">anon_other_write_enable&#x3D;YES # 匿名用户修改删除</span><br><span class="line">chown_username&#x3D;username # 匿名上传文件所属用户名</span><br><span class="line"></span><br><span class="line"># 修改匿名用户根目录权限</span><br><span class="line">chmod 777 &#x2F;var&#x2F;ftp</span><br><span class="line"></span><br><span class="line"># 重启 ftp 服务</span><br><span class="line">systemctl start vsftpd</span><br></pre></td></tr></table></figure>
+
+<p>本地用户访问</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 创建 ftp 用户名为 username 且不可登录，也可使用 -d [指定文件夹] 作为上传根目录</span><br><span class="line">useradd username -s &#x2F;sbin&#x2F;nologin [-d &#x2F;home&#x2F;username]</span><br><span class="line"></span><br><span class="line"># 设置 ftp 用户密码</span><br><span class="line">passwd username</span><br><span class="line"></span><br><span class="line"># 配置参数</span><br></pre></td></tr></table></figure>
+<p>vim /etc/vsftpd/vsftpd.conf</p>
+<p>ftpd_banner=Hello, world! # ftp 欢迎信息<br>local_root=/var/ftp # ftp 根路径文件夹<br>anon_root=/var/ftp # ftp 匿名用户根路径文件夹<br>use_localtime=YES # 设置 ftp 服务使用本地时间</p>
+<p>anonymous_enable=NO # 禁止匿名访问<br>chroot_list_enable=YES # 启用用户列表<br>chroot_list_file=/etc/vsftpd/chroot_list # 用户列表清单</p>
+<p>pasv_min_port=61001 # 传输文件最小端口<br>pasv_max_port=62000 # 传输文件最大端口</p>
+<p>systemctl start vsftpd</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 配置 selinux</span><br><span class="line">vim &#x2F;etc&#x2F;selinux&#x2F;config</span><br><span class="line"></span><br><span class="line"># 设置 SELINUX 为 disabled</span><br><span class="line">SELINUX&#x3D;disabled</span><br><span class="line"></span><br><span class="line"># 重读配置文件</span><br><span class="line">setenforce 0</span><br><span class="line"></span><br><span class="line">systemctl start vsftpd</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/c8c9fa38f6c2/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E7%B3%BB%E7%BB%9F"><span class="nav-text">更新系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="nav-text">基本配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95-SSH"><span class="nav-text">免密码登录 SSH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Nginx-%E6%9C%8D%E5%8A%A1"><span class="nav-text">安装 Nginx 服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-php-fpm-%E6%9C%8D%E5%8A%A1"><span class="nav-text">安装 php-fpm 服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Composer-%E5%B7%A5%E5%85%B7"><span class="nav-text">安装 Composer 工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Mariadb-%E6%9C%8D%E5%8A%A1"><span class="nav-text">安装 Mariadb 服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Vsftpd"><span class="nav-text">安装 Vsftpd</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="山猫"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">山猫</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:chafang0131@163.com" title="Email → mailto:chafang0131@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>Email</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/chafang0131" title="WeiBo → https:&#x2F;&#x2F;weibo.com&#x2F;chafang0131" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>WeiBo</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">山猫</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
