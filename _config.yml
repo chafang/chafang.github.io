@@ -4,10 +4,10 @@
 
 # Site
 title: 山猫的博客
-subtitle: '山猫研究室'
+subtitle: ''
 description: ''
-keywords: '山猫的博客'
-author: 山猫
+keywords:
+author: chafang
 language: zh-CN
 timezone: 'Asia/Shanghai'
 
@@ -23,7 +23,7 @@ pretty_urls:
 
 # Directory
 source_dir: source
-public_dir: docs
+public_dir: public
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
@@ -106,4 +106,4 @@ theme: next
 deploy:
   type: git
   repo: git@github.com:chafang/chafang.github.io.git
-  branch: master
+  branch: blog
