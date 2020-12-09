@@ -22,16 +22,16 @@
   <meta name="description" content="经过两天研究，自己的博客成功切换到 Github 上了。目前博客的主程序用了比较流行的 hexo 工具进行搭建，今天就简单说说基本步骤和部分问题的方法吧。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="博客切换至 Github Pages">
-<meta property="og:url" content="https://chafang.blog/d92ca3baa70b/index.html">
+<meta property="og:url" content="https://chafang.blog/26d83c7401bd/index.html">
 <meta property="og:site_name" content="山猫的博客">
 <meta property="og:description" content="经过两天研究，自己的博客成功切换到 Github 上了。目前博客的主程序用了比较流行的 hexo 工具进行搭建，今天就简单说说基本步骤和部分问题的方法吧。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-12-09T02:14:14.732Z">
-<meta property="article:modified_time" content="2020-12-09T02:14:14.732Z">
+<meta property="article:published_time" content="2020-12-09T02:28:22.587Z">
+<meta property="article:modified_time" content="2020-12-09T02:28:22.587Z">
 <meta property="article:author" content="chafang">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://chafang.blog/d92ca3baa70b/">
+<link rel="canonical" href="https://chafang.blog/26d83c7401bd/">
 
 
 <script id="page-configurations">
@@ -149,7 +149,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chafang.blog/d92ca3baa70b/">
+    <link itemprop="mainEntityOfPage" href="https://chafang.blog/26d83c7401bd/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -236,7 +236,7 @@
 <p>譬如我可以使用 master 分支进行文章的撰写，可以用 blog 分支进行发布，只需要在 <code>_config.yml</code> 文件配置即可。</p>
 <p>打开 <code>Github</code> 的仓库设置，找到 <code>Custom domain</code> 修改为自己解析的域名，同时在域名解析里配置好 <code>cname</code> 到 <code>username.github.io</code> 。</p>
 <p>点击保存，勾选 <code>Enforce HTTPS</code>，过几分钟可以使用 <code>ping</code> 命令检查是否解析过去了，接着就能进行访问了。</p>
-<h2 id="Custom-domain-自动消失的问题"><a href="#Custom-domain-自动消失的问题" class="headerlink" title="Custom domain 自动消失的问题"></a>Custom domain 自动消失的问题</h2><p>使用过程中，碰到一个棘手的问题就是 <code>Custom domain</code> 总是在我执行发布后自动消失，需要重新绑定。</p>
+<h2 id="自定义域名消失"><a href="#自定义域名消失" class="headerlink" title="自定义域名消失"></a>自定义域名消失</h2><p>使用过程中，碰到一个棘手的问题就是 <code>Custom domain</code> 总是在执行发布后自动消失，需要重新绑定。</p>
 <p>这时需要在当前项目中的 <code>source</code> 下新建一个名为 <code>CNAME</code> 的文件，将自己绑定的域名写进去，发布一下即可。</p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>hexo 还是很有意思的，有些东西需要一点点研究，但总之我不需要自己搭建数据库和配置了，hexo 自己维护自己的数据库。</p>
 <p>最重要的是，博客空间不需要付费；博客空间不需要付费；博客空间不需要付费。</p>
@@ -318,7 +318,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-npm"><span class="nav-text">安装 npm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-hexo"><span class="nav-text">安装 hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-hexo"><span class="nav-text">使用 hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-NexT"><span class="nav-text">安装 NexT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Github-%E9%85%8D%E7%BD%AE"><span class="nav-text">Github 配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%91%E5%B8%83%E8%AF%B4%E6%98%8E%E5%92%8C%E5%9F%9F%E5%90%8D%E9%85%8D%E7%BD%AE"><span class="nav-text">发布说明和域名配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Custom-domain-%E8%87%AA%E5%8A%A8%E6%B6%88%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-text">Custom domain 自动消失的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E8%AF%AD"><span class="nav-text">结语</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-npm"><span class="nav-text">安装 npm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-hexo"><span class="nav-text">安装 hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-hexo"><span class="nav-text">使用 hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-NexT"><span class="nav-text">安装 NexT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Github-%E9%85%8D%E7%BD%AE"><span class="nav-text">Github 配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%91%E5%B8%83%E8%AF%B4%E6%98%8E%E5%92%8C%E5%9F%9F%E5%90%8D%E9%85%8D%E7%BD%AE"><span class="nav-text">发布说明和域名配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E6%B6%88%E5%A4%B1"><span class="nav-text">自定义域名消失</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E8%AF%AD"><span class="nav-text">结语</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
