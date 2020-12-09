@@ -72,7 +72,7 @@ npm install --registry=https://registry.npm.taobao.org
 
 不得不说，这主题确实还行，凑合用吧，我是懒得写了。
 
-新主题的 Github 地址从 `https://github.com/iissnan/hexo-theme-next` 换到了 [这里](https://github.com/theme-next/hexo-theme-next)
+新主题的 Github 地址从 [这里](https://github.com/iissnan/hexo-theme-nex) 换到了 [这里](https://github.com/theme-next/hexo-theme-next)
 
 所以，我们执行以下命令安装 NexT 主题，参数 `--depth=1` 的意思是只获取最新一次。
 
@@ -96,7 +96,7 @@ npm install js-yaml --registry=https://registry.npm.taobao.org
 > 名称为：`username.github.io`
 > 名称为：`username.github.io`
 
-重要的事情说三遍。这也是和多年之前不同，导致我这两天折腾好久的原因。
+重要的事情说三遍。这也是和多年之前不同，导致耽误时间的原因。
 
 其中 `username` 需要和你的 github 账号同名，具体官方信息可查看[这里](https://pages.github.com/)
 
