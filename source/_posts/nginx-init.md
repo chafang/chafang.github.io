@@ -1,13 +1,14 @@
 ---
-title: Nginx 安装和初始化配置
+title: LNMP 安装和初始化配置
 date: 2020-12-09 17:29:12
 tags:
 ---
 
-``` bash
-# 安装 PHP 可能用到的包
-yum -y install bzip2 bzip2-devel libzip libzip-devel libcurl libcurl-devel libjpeg libjpeg-devel libpng libpng-devel freetype freetype-devel gmp gmp-devel libmcrypt libmcrypt-devel readline readline-devel libxslt libxslt-devel libicu libicu-devel sqlite sqlite-devel oniguruma oniguruma-devel libevent libevent-devel libpng-devel libwebp-devel libjpeg-devel icu libicu-devel libxslt-deve
-```
+Linux 下的 Nginx、PHP、MariaDB 安装相对来说比较简单，以下是操作详细步骤。
+
+<!-- more -->
+
+## 安装 Nginx 服务
 
 新增用户组，新增用户不可登陆
 
@@ -19,12 +20,9 @@ groupadd nginx
 useradd nginx -g nginx -s /sbin/nologin -M
 ```
 
-安装 Nginx 服务
-----
-
 官网下载 [Download](http://nginx.org/en/download.html "nginx")
 
-```
+``` bash
 tar -zxf nginx-latest.tar.gz
 cd nginx-latest
 
@@ -45,11 +43,11 @@ nginx
 # 关闭或重载 nginx 服务
 nginx -s stop
 nginx -s reload
-
 ```
 
 配置 nginx 验证功能（可选）
-```
+
+``` bash
 htpasswd -c /usr/local/share/nginx/conf/ptList [username]
 
 # 在 server 或 location 配置中添加，htpasswd 只支持目录认证
@@ -57,11 +55,17 @@ auth_basic "Please input password";
 auth_basic_user_file /usr/local/share/nginx/conf/ptList;
 ```
 
-安装 php-fpm 服务
-----
+## 安装 php 服务
+
+安装 PHP 需要用到的包
+
+``` bash
+yum -y install bzip2 bzip2-devel libzip libzip-devel libcurl libcurl-devel libjpeg libjpeg-devel libpng libpng-devel freetype freetype-devel gmp gmp-devel libmcrypt libmcrypt-devel readline readline-devel libxslt libxslt-devel libicu libicu-devel sqlite sqlite-devel oniguruma oniguruma-devel libevent libevent-devel libpng-devel libwebp-devel libjpeg-devel icu libicu-devel libxslt-devel
+```
+
 官网下载 [Download](https://www.php.net/downloads "php")
 
-```
+``` bash
 tar -zxf php-latest.tar.gz
 cd php-latest
 
@@ -93,17 +97,17 @@ php-fpm -t
 php-fpm -D
 
 # 平滑退出
-ps aux|grep -E "php-fpm:\ master\ process"|awk '{print $2}'|xargs kill -QUIT
+ps aux|grep -E "php-fpm:\ master\ process"|awk '{print $2}'|xargs kill -TERM
 
 # 平滑重启
-ps aux|grep -E "php-fpm:\ master\ process"|awk '{print $2}'|xargs kill -USR2
+ps aux|grep -E "php-fpm:\ master\ process"|awk '{print $2}'|xargs kill -USR1
 ```
 
-#### 安装 PHP 时常见错误列表
+## 常见错误列表
 
-```
-# 常见的报错可参考以下进行修复
+常见的报错可参考以下进行修复
 
+``` bash
 # 解决 error: the HTTP XSLT module requires the libxml2/libxslt 错误
 yum -y install libxml2 libxml2-dev libxslt-devel
 
@@ -185,19 +189,20 @@ yum -y install oniguruma oniguruma-devel
 
 ```
 
-安装 Composer 工具
-----
-```
+## 安装 Composer 工具
+
+``` bash
 mkdir /usr/local/share/composer
+
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 php composer-setup.php --install-dir=/usr/local/share/composer --filename=composer
 ```
 
-安装 Mariadb 服务
-----
+## 安装 Mariadb 服务
+
 打开官网资源 [Repo](https://downloads.mariadb.org/mariadb/repositories/ "mariadb")
 
-```
+``` bash
 # 选择对应的系统，将生成的数据保存至 /etc/yum.repos.d/MariaDB.repo
 
 # MariaDB 10.3 CentOS repository list - created 2019-03-26 08:55 UTC
@@ -215,7 +220,7 @@ yum -y install MariaDB-server MariaDB-client
 systemctl enable mariadb
 systemctl start mariadb
 
-# 找到 mariaDB 配置文件中的 [mysqld] 部分，添加一行
+# 找到 mariaDB 配置文件中的 [mysqld] 部分，添加一行，是跳过验证
 # 通常在 /etc/my.cnf.d/server.cnf 中
 [mysqld]
 skip-grant-tables
@@ -227,8 +232,9 @@ mysql_secure_installation
 systemctl restart mariadb
 ```
 
-以下是常见 MySQL 命令
-```
+常见 MySQL 命令
+
+``` sql
 # 创建数据库
 CREATE DATABASE database_name;
 

@@ -171,6 +171,6 @@ Host name
 HostName ip
 User username
 IdentitiesOnly yes
-
-# 名称用空行隔开
 ```
+
+多个名称可以用空行隔开
