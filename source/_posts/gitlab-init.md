@@ -1,5 +1,5 @@
 ---
-title: gitlab 安装与初始化配置
+title: Gitlab 安装与初始化配置
 date: 2020-12-10 09:31:32
 tags:
 ---
@@ -8,7 +8,7 @@ tags:
 
 <!-- more -->
 
-## 新增 Gitlab 仓库并安装
+## 安装 Gitlab
 
 ``` bash
 vim /etc/yum.repos.d/Gitlab-ce.repo
