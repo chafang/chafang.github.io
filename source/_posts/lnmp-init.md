@@ -8,7 +8,7 @@ Linux 下的 Nginx、PHP、MariaDB 安装相对来说比较简单，以下是操
 
 <!-- more -->
 
-## 安装 Nginx 服务
+## 安装 Nginx
 
 新增用户组，新增用户不可登陆
 
@@ -55,7 +55,7 @@ auth_basic "Please input password";
 auth_basic_user_file /usr/local/share/nginx/conf/ptList;
 ```
 
-## 安装 php 服务
+## 安装 PHP
 
 安装 PHP 需要用到的包
 
@@ -70,7 +70,7 @@ tar -zxf php-latest.tar.gz
 cd php-latest
 
 # 可使用 ./configure --help 查看帮助和相关插件
-./configure --prefix=/usr/local/share/php --with-fpm-user=nginx --with-fpm-group=nginx --enable-fpm --disable-fileinfo --with-curl --with-gettext --with-iconv-dir --enable-intl --with-mysqli --with-openssl --with-pdo-mysql --with-pdo-sqlite --with-pear --with-xmlrpc --with-xsl --with-zlib --with-bz2 --with-mhash --enable-bcmath --enable-inline-optimization --enable-mbregex --enable-mbstring --enable-opcache --enable-pcntl --enable-shmop --enable-soap --enable-sockets --enable-sysvsem --enable-sysvshm --enable-xml --enable-gd --with-webp --with-jpeg
+./configure --prefix=/usr/local/share/php --with-fpm-user=nginx --with-fpm-group=nginx --enable-fpm --with-curl --with-gettext --enable-intl --with-mysqli --with-openssl --with-pdo-mysql --with-pdo-sqlite --with-pear --with-xsl --with-zlib --with-bz2 --with-mhash --enable-bcmath --enable-mbregex --enable-mbstring --enable-opcache --enable-pcntl --enable-shmop --enable-soap --enable-sockets --enable-sysvsem --enable-sysvshm --enable-xml --enable-gd --with-webp --with-jpeg
 
 # 以上配置安装时可能会报各种包版本问题或找不到，可搜索相关报错信息进行修复，部分常见错误可见附加列表。
 
@@ -103,7 +103,7 @@ ps aux|grep -E "php-fpm:\ master\ process"|awk '{print $2}'|xargs kill -TERM
 ps aux|grep -E "php-fpm:\ master\ process"|awk '{print $2}'|xargs kill -USR1
 ```
 
-## 常见错误列表
+## 常见错误
 
 常见的报错可参考以下进行修复
 
@@ -189,7 +189,7 @@ yum -y install oniguruma oniguruma-devel
 
 ```
 
-## 安装 Composer 工具
+## 安装 Composer
 
 ``` bash
 mkdir /usr/local/share/composer
@@ -198,9 +198,11 @@ php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 php composer-setup.php --install-dir=/usr/local/share/composer --filename=composer
 ```
 
-## 安装 Mariadb 服务
+## 安装 Mariadb
 
 打开官网资源 [Repo](https://downloads.mariadb.org/mariadb/repositories/ "mariadb")
+
+按照自身实际情况选择适合的版本，同时也可将官方的镜像源替换为国内镜像，中科大的镜像源相对完整，可[点击这里](http://mirrors.ustc.edu.cn/help/mariadb.html)
 
 ``` bash
 # 选择对应的系统，将生成的数据保存至 /etc/yum.repos.d/MariaDB.repo
@@ -232,7 +234,7 @@ mysql_secure_installation
 systemctl restart mariadb
 ```
 
-常见 MySQL 命令
+## 常用 MySQL 命令
 
 ``` sql
 # 创建数据库
